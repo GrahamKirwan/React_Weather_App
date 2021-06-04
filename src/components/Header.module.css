@@ -1,0 +1,12 @@
+.header {
+    background-color: rgb(209, 36, 36);
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.header h2 {
+    color: #fff;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
