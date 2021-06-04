@@ -1,0 +1,21 @@
+.data-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0 300px;
+
+}
+
+.data-container__item {
+    
+}
+
+.heading {
+
+}
+
+.number {
+    font-size: 30px;
+    font-weight: 200;
+    margin-top: 0;
+}
