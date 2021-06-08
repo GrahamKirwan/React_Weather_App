@@ -21,16 +21,16 @@ const Main = () => {
           setWeatherData(response);
           console.log(weatherData)
         } catch (error) {
-          console.error(error);
+          console.error("error" + error);
         }
       }
 
       useEffect(() => {
         console.log('useefcct here')
         getUser();
-      }, [weatherData])
+      }, [])
 
-
+      getUser();
     return (
         <div className={classes.main}>
             <Header></Header>
