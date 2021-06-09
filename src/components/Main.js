@@ -18,24 +18,21 @@ const Main = () => {
     async function getUser() {
         try {
           const response = await axios.get(url);
-          setWeatherData(response);
-          console.log(weatherData)
+          setWeatherData(response.data.main);
         } catch (error) {
           console.error("error" + error);
         }
       }
 
       useEffect(() => {
-        console.log('useefcct here')
         getUser();
       }, [])
 
-      getUser();
     return (
         <div className={classes.main}>
             <Header></Header>
             <WeatherSearch></WeatherSearch>
-            <WeatherData apiCall={weatherData}></WeatherData>
+            {weatherData ? <WeatherData apiCall={weatherData}></WeatherData> : ''}
         </div>
     )
 }
