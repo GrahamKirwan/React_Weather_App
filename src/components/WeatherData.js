@@ -4,7 +4,7 @@ import classes from './WeatherData.module.css'
 
 
 const WeatherData = (props) => {
-
+console.log(props.apiCall)
     return (
         <div className={classes['data-container']}>
             <div className={classes['data-container__item']}>
