@@ -1,22 +1,26 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 import Header from './Header';
+import WeatherData from './WeatherData';
+import WeatherSearch from './WeatherSearch';
 
 import classes from './Main.module.css'
 
 
 const Main = () => {
 
+  const [weatherData, setWeatherData] = useState();
+
     const API_KEY = '8ab4657eacc05266a620fa3f0ee36da6';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${API_KEY}`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=${API_KEY}`
 
     async function getUser() {
         try {
           const response = await axios.get(url);
-          console.log(response.data.main);
+          setWeatherData(response.data.main);
         } catch (error) {
-          console.error(error);
+          console.error("error" + error);
         }
       }
 
@@ -27,6 +31,8 @@ const Main = () => {
     return (
         <div className={classes.main}>
             <Header></Header>
+            <WeatherSearch></WeatherSearch>
+            {weatherData ? <WeatherData apiCall={weatherData}></WeatherData> : ''}
         </div>
     )
 }
@@ -34,12 +40,3 @@ const Main = () => {
 export default Main;
 
 
-// Wrapper.js
-// Main.js
-// Header.js
-// DateTime.js
-// Content.js
-// WeatherSearch.js
-// WeatherData.js
-// Error.js
-// Footer.js
