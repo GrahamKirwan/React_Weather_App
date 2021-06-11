@@ -32,3 +32,14 @@ const Main = () => {
 }
 
 export default Main;
+
+
+// Wrapper.js
+// Main.js
+// Header.js
+// DateTime.js
+// Content.js
+// WeatherSearch.js
+// WeatherData.js
+// Error.js
+// Footer.js
