@@ -1,0 +1,7 @@
+.location-container {
+    text-align: center;
+}
+
+.location-container span{
+    color: red;
+}
