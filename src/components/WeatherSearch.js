@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const WeatherSearch = () => {
+import classes from './WeatherSearch.module.css'
 
-    const searchHandler = () => {console.log('sjbsbfksn')}
+
+const WeatherSearch = (props) => {
+
+    const [cityName, setCityName] = useState('');
+
+    const searchHandler = (e) => {
+        e.preventDefault();
+        let location = e.target[0].value;
+        setCityName('');
+        props.apiLocationCall(location);
+    }
     return (
-        <div>
-            <input onSubmit={searchHandler}></input>
-            <button>Search</button>
+        <div className={classes.searchBox}>
+            <form onSubmit={searchHandler}>
+                <input type="text"></input>
+                <button>Search</button>
+            </form>
         </div>
     )
 }
