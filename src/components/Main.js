@@ -38,6 +38,3 @@ const Main = () => {
 }
 
 export default Main;
-
-// WeatherSearch
-// WeatherData
