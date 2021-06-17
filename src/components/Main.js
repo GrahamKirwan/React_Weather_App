@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Context from '../Context';
 
 import Header from './Header';
 import WeatherData from './WeatherData';
@@ -40,10 +41,12 @@ const Main = () => {
 
     return (
         <div className={classes.main}>
-            <Header></Header>
-            <WeatherSearch apiLocationCall={apiLocationHandler}></WeatherSearch>
-            <WeatherLocation city={city}></WeatherLocation>
-            {weatherData ? <WeatherData apiCall={weatherData}></WeatherData> : ''}
+          <Context.Provider value={{apiLocationCall: apiLocationHandler, apiCall: weatherData, city}}>
+            <Header/>
+            <WeatherSearch></WeatherSearch>
+            <WeatherLocation></WeatherLocation>
+            {weatherData ? <WeatherData></WeatherData> : ''}
+          </Context.Provider>
         </div>
     )
 }

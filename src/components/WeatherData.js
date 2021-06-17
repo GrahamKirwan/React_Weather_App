@@ -1,22 +1,27 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
+import Context from '../Context'
 
 import classes from './WeatherData.module.css'
 
 
-const WeatherData = (props) => {
+const WeatherData = () => {
+
+    const {apiCall} = useContext(Context);
+
     return (
         <div className={classes['data-container']}>
             <div className={classes['data-container__item']}>
                 <p className={classes['heading']}>Temperature</p>
-                <p className={classes['number']}>{props.apiCall.temp}</p>
+                <p className={classes['number']}>{apiCall.temp}</p>
             </div>
             <div className={classes['data-container__item']}>
                 <p className={classes['heading']}>Pressure</p>
-                <p className={classes['number']}>{props.apiCall.pressure}</p>
+                <p className={classes['number']}>{apiCall.pressure}</p>
             </div>
             <div className={classes['data-container__item']}>
                 <p className={classes['heading']}>Humidity</p>
-                <p className={classes['number']}>{props.apiCall.humidity}</p>
+                <p className={classes['number']}>{apiCall.humidity}</p>
             </div>
         </div>
        
