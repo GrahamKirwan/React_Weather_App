@@ -13,7 +13,7 @@ import classes from './Main.module.css'
 const Main = () => {
 
   const [weatherData, setWeatherData] = useState();
-  const [city, setCity] = useState('Toronto');
+  const [city, setCity] = useState('Dublin');
 
 
 
